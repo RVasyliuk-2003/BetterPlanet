@@ -1,0 +1,48 @@
+.leftPanel_Categories {
+  width: 310px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 20px 0px 20px;
+  background-color: #fbfbfb;
+
+  > p {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  > ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+
+    > li > a {
+      font-size: 15px;
+    }
+  }
+}
+
+.leftPanel_Size {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+
+  > p {
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+
+  > ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+
+    > li > a {
+      font-size: 15px;
+    }
+  }
+}

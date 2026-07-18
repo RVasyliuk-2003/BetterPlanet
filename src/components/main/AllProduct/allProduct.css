@@ -1,0 +1,46 @@
+.leftAndRightPanels {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navPanel {
+  display: flex;
+  justify-content: space-between;
+
+  > ul {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.selectBox {
+  display: flex;
+  gap: 8px;
+}
+
+.mainPanelProduct {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px 40px;
+}
+
+.mainCardsBox {
+  > h6 {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  > p {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #46a358;
+  }
+}
+
+.allRightPanel {
+  margin-left: 50px;
+}

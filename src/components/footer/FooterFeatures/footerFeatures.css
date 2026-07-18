@@ -1,0 +1,108 @@
+.ftrBoxOne {
+  padding: 25px;
+  margin-top: 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #fbfbfb;
+}
+
+.positionImg {
+  position: relative;
+  height: 90px;
+
+  > .img1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+  }
+  > .img2 {
+    position: absolute;
+    top: 47px;
+    left: 0px;
+    z-index: 1;
+  }
+}
+
+.ftrBoxFour:nth-child(-n + 2) {
+  border-right: 1px solid #46a3581a;
+  padding-right: 25px;
+}
+
+.ftrBoxFour {
+  max-width: 204px;
+
+  > img {
+    width: 60px;
+  }
+
+  .boxText {
+    > h6 {
+      margin-top: 15px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #3d3d3d;
+    }
+
+    > p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #727272;
+    }
+  }
+}
+
+.ftrBoxFour4 {
+  display: flex;
+  flex-direction: column;
+  max-width: 354px;
+  gap: 18px;
+
+  > h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3d3d3d;
+  }
+
+  .inptAndBtnBox {
+    position: relative;
+    width: 354px;
+
+    > input {
+      position: relative;
+      width: 354px;
+      padding: 12px 95px 12px 11px;
+
+      border: none;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+
+      box-sizing: border-box;
+    }
+
+    > button {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      background-color: #46a358;
+      border: none;
+      border-radius: 0px 5px 5px 0px;
+
+      width: 85px;
+      height: 40px;
+
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  > p {
+    font-size: 13px;
+    color: #727272;
+  }
+}

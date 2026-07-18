@@ -1,0 +1,28 @@
+.mainBox {
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+
+  background-color: #4fb4611a;
+  height: 88px;
+
+  > img {
+    max-width: 150px;
+  }
+}
+
+.contactBoxs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  > img {
+    max-width: 20px;
+  }
+
+  > a {
+    font-size: 14px;
+    color: #3d3d3dd6;
+  }
+}
