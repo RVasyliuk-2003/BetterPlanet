@@ -1,0 +1,69 @@
+.mainBoxLinks {
+  background-color: #fbfbfb;
+  padding: 32px 23px 28px 23px;
+  display: flex;
+  gap: 155px;
+
+  border-bottom: 1px solid #46a35833;
+}
+
+.ulListNav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  > li > a {
+    color: black;
+  }
+}
+
+.mainLiNav {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mediaContainer {
+  padding-left: 50px;
+}
+
+.SocialMediaBox {
+  > p {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .imgMedia {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+
+    > img {
+      max-width: 30px;
+    }
+  }
+}
+
+.weAcceptBox {
+  margin-top: 33px;
+
+  > p {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  > img {
+    margin-top: 13px;
+
+    max-width: 224px;
+    width: 100%;
+  }
+}
+
+.boxReserved {
+  text-align: center;
+  padding: 8px 13px;
+  > p {
+    font-size: 14px;
+    color: #3d3d3d;
+  }
+}
