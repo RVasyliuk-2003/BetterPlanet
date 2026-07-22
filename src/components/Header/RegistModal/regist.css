@@ -1,0 +1,60 @@
+.registMainBox {
+  transform: translate(-50%, -100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+  padding: 55px 70px 25px 70px;
+  border: 1px solid #46a358;
+  border-radius: 10px;
+}
+
+.registLog {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  max-width: 300px;
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  > form > input {
+    height: 40px;
+    padding-left: 14px;
+    border: 1px solid rgba(128, 128, 128, 0.356);
+    border-radius: 5px;
+  }
+
+  > form > button {
+    margin-top: 25px;
+    width: 300px;
+    height: 45px;
+    background-color: #46a358;
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.btnClossest {
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+  background: transparent;
+  border: none;
+}
+
+.clossestModl {
+  display: none;
+}

@@ -5,7 +5,12 @@ import Vector2 from "./images/Vector2.png";
 import Logout from "./images/Logout.png";
 import VectorLogo from "./images/VectorLogo.png";
 
+import Regist from "./RegistModal/Regist";
+import { useState } from "react";
+
 const Header = () => {
+  const [modalRegistOpen, setModalRegistOpen] = useState(false);
+
   return (
     <>
       <header>
@@ -40,10 +45,20 @@ const Header = () => {
                 <img className="pngAut2" src={Vector} alt="img" />
               </a>
 
-              <button>
+              <button onClick={() => setModalRegistOpen(true)}>
                 <img src={Logout} alt="imgOut" />
                 Login
               </button>
+              <div>
+                {modalRegistOpen ? (
+                  <Regist
+                    modalRegistOpen={modalRegistOpen}
+                    setModalRegistOpen={setModalRegistOpen}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </nav>
         </div>
