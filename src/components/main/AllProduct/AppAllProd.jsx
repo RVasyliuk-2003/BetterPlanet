@@ -22,6 +22,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "Terrariums",
       size: "Small",
+      isNew: false,
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "House Plants",
       size: "Medium",
+      isNew: true,
     },
     {
       id: 3,
@@ -42,6 +44,7 @@ const AppAllProduct = () => {
       discount: 13,
       category: "House Plants",
       size: "Large",
+      isNew: true,
     },
     {
       id: 4,
@@ -52,6 +55,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "Big Plants",
       size: "Large",
+      isNew: false,
     },
     {
       id: 5,
@@ -62,6 +66,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "House Plants",
       size: "Medium",
+      isNew: false,
     },
     {
       id: 6,
@@ -72,6 +77,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "Succulents",
       size: "Medium",
+      isNew: true,
     },
     {
       id: 7,
@@ -82,6 +88,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "Potter Plants",
       size: "Small",
+      isNew: true,
     },
     {
       id: 8,
@@ -92,6 +99,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "Terrariums",
       size: "Small",
+      isNew: true,
     },
     {
       id: 9,
@@ -102,6 +110,7 @@ const AppAllProduct = () => {
       discount: null,
       category: "House Plants",
       size: "Small",
+      isNew: true,
     },
   ];
   return (
