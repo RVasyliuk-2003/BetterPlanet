@@ -4,11 +4,21 @@ import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
 const AllProduct = ({ product }) => {
+
   const [selectShop, setSelectShop] = useState("Default sorting");
+  const [liCategor, setLiCategor] = useState("All Plants");
 
   const filteredProducts = product.filter((ell) => {
-    if (selectShop === "Default sorting") return true;
-    return ell.title === selectShop;
+    if (liCategor === "New Arrivals" && !ell.isNew) {
+      return false;
+    }
+    if (liCategor === "Sale" && !ell.oldPrice) {
+      return false;
+    }
+    if (selectShop !== "Default sorting" && ell.title !== selectShop) {
+      return false;
+    }
+    return true;
   });
 
   return (
@@ -21,21 +31,72 @@ const AllProduct = ({ product }) => {
             <nav className="navPanel">
               <ul>
                 <li>
-                  <a href="#">All Plants</a>
+                  <a
+                    style={{
+                      color: liCategor === "All Plants" ? "green" : undefined,
+                    }}
+                    onClick={(e) => {
+                      setLiCategor("All Plants");
+                    }}
+                    href="#"
+                  >
+                    All Plants
+                  </a>
                 </li>
                 <li>
-                  <a href="#">New Arrivals</a>
+                  <a
+                    style={{
+                      color: liCategor === "New Arrivals" ? "green" : undefined,
+                    }}
+                    onClick={(e) => {
+                      setLiCategor("New Arrivals");
+                    }}
+                    href="#"
+                  >
+                    New Arrivals
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Sale</a>
+                  <a
+                    style={{
+                      color: liCategor === "Sale" ? "green" : undefined,
+                    }}
+                    onClick={(e) => {
+                      setLiCategor("Sale");
+                    }}
+                    href="#"
+                  >
+                    Sale
+                  </a>
                 </li>
               </ul>
               <div className="selectBox">
                 <p>Short by:</p>
                 <select onChange={(e) => setSelectShop(e.target.value)}>
-                  <option>Default sorting</option>
+                  <option
+                    style={{
+                      backgroundColor:
+                        selectShop === "Default sorting" ? "green" : undefined,
+
+                      color:
+                        selectShop === "Default sorting" ? "white" : undefined,
+                    }}
+                  >
+                    Default sorting
+                  </option>
                   {product.map((ell) => (
-                    <option key={ell.id}>{ell.title}</option>
+                    <option
+                      style={{
+                        backgroundColor:
+                          selectShop === ell.title ? "green" : undefined,
+
+                        color: selectShop === ell.title ? "white" : undefined,
+                      }}
+                      Sale
+                      key={ell.id}
+                    >
+                      {ell.title}
+                    </option>
                   ))}
                 </select>
               </div>
