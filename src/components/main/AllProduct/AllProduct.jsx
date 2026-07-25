@@ -1,8 +1,16 @@
+import { useState } from "react";
 import "../../../App.css";
 import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
 const AllProduct = ({ product }) => {
+  const [selectShop, setSelectShop] = useState("Default sorting");
+
+  const filteredProducts = product.filter((ell) => {
+    if (selectShop === "Default sorting") return true;
+    return ell.title === selectShop;
+  });
+
   return (
     <section>
       <div className="positionCenter">
@@ -24,7 +32,7 @@ const AllProduct = ({ product }) => {
               </ul>
               <div className="selectBox">
                 <p>Short by:</p>
-                <select>
+                <select onChange={(e) => setSelectShop(e.target.value)}>
                   <option>Default sorting</option>
                   {product.map((ell) => (
                     <option key={ell.id}>{ell.title}</option>
@@ -34,9 +42,9 @@ const AllProduct = ({ product }) => {
             </nav>
 
             <div className="mainPanelProduct">
-              {product.map((ell) => (
+              {filteredProducts.map((ell) => (
                 <div className="mainCardsBox" key={ell.id}>
-                  <img src={ell.img} alt={ell.name} />
+                  <img src={ell.img} alt={ell.title} />
                   <h6>{ell.title}</h6>
                   <p>${ell.price}</p>
                 </div>
