@@ -1,6 +1,14 @@
+import { useState } from "react";
 import "./category.css";
+import AllProducts from "../AllProduct";
 
-const CategoryPanel = ({ product }) => {
+const CategoryPanel = ({
+  product,
+  clickCategory,
+  setClickCategory,
+  clickSize,
+  setClickSize,
+}) => {
   const noCategorRepeat = [...new Set(product.map((ell) => ell.category))];
 
   const noSizeRepeat = [...new Set(product.map((ell) => ell.size))];
@@ -12,7 +20,13 @@ const CategoryPanel = ({ product }) => {
         {noCategorRepeat.map((ell) => (
           <ul key={ell.id}>
             <li>
-              <a href="#">{ell}</a>
+              <a
+                style={{ color: clickCategory === ell? "green" : undefined }}
+                onClick={() => setClickCategory(ell)}
+                href="#"
+              >
+                {ell}
+              </a>
             </li>
             <li>({ell.length})</li>
           </ul>
@@ -23,7 +37,13 @@ const CategoryPanel = ({ product }) => {
           {noSizeRepeat.map((ell) => (
             <ul key={ell.id}>
               <li>
-                <a href="#">{ell}</a>
+                <a
+                  style={{ color: clickSize === ell ? "green" : undefined }}
+                  onClick={() => setClickSize(ell)}
+                  href="#"
+                >
+                  {ell}
+                </a>
               </li>
               <li> ({ell.length})</li>
             </ul>

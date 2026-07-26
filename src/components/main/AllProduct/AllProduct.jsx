@@ -7,10 +7,16 @@ const AllProduct = ({ product }) => {
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
 
+  const [clickCategory, setClickCategory] = useState("");
+  const [clickSize, setClickSize] = useState("");
+
   const filteredProducts = product.filter((ell) => {
-    if (liCategor === "New Arrivals") return ell.isNew;
-    if (liCategor === "Sale") return ell.oldPrice;
-    if (selectShop !== "Default sorting") return ell.title === selectShop;
+    if (clickCategory && ell.category !== clickCategory) return false;
+    if (clickSize && ell.size !== clickSize) return false;
+    if (liCategor === "New Arrivals" && !ell.isNew) return false;
+    if (liCategor === "Sale" && !ell.oldPrice) return false;
+    if (selectShop !== "Default sorting" && ell.title !== selectShop)
+      return false;
     return true;
   });
 
@@ -18,7 +24,13 @@ const AllProduct = ({ product }) => {
     <section>
       <div className="positionCenter">
         <div className="leftAndRightPanels">
-          <CategoryPanel product={product} />
+          <CategoryPanel
+            product={product}
+            clickCategory={clickCategory}
+            setClickCategory={setClickCategory}
+            clickSize={clickSize}
+            setClickSize={setClickSize}
+          />
 
           <div className="allRightPanel">
             <nav className="navPanel">
@@ -30,6 +42,8 @@ const AllProduct = ({ product }) => {
                     }}
                     onClick={(e) => {
                       setLiCategor("All Plants");
+                      setClickCategory("");
+                      setClickSize("");
                     }}
                     href="#"
                   >
