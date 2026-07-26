@@ -1,7 +1,7 @@
 import "./letsMake.css";
 import "../../../App.css";
 import mainPng from "./images/mainPng.png";
-import ShopNow from "../OurBlogPosts/ShopNow/ShopNow";
+import ShopNow from "./ShopNow/ShopNow";
 import { useState } from "react";
 
 const LetsMake = () => {
