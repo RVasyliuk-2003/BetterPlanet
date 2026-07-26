@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./footerFeatures.css";
 
 import Frame1 from "./images/Frame.png";
@@ -6,6 +7,20 @@ import Frame2 from "./images/Group2.png";
 import Frame3 from "./images/Group3.png";
 
 const FooterFeatures = () => {
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [inptEmail, setInptEmail] = useState("");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const errorEmailFn = () => {
+    if (emailRegex.test(inptEmail)) {
+      setErrorEmail(false);
+      setInptEmail("");
+    } else {
+      setErrorEmail(true);
+    }
+  };
+
   return (
     <>
       <footer>
@@ -47,10 +62,22 @@ const FooterFeatures = () => {
           <div className="ftrBoxFour4">
             <h5>Would you like to join newsletters?</h5>
 
-            <div className="inptAndBtnBox">
-              <input type="email" placeholder="enter your email address..." />
-              <button>Join</button>
+            <div
+              style={{ border: errorEmail ? "1px solid red" : undefined }}
+              className="inptAndBtnBox"
+            >
+              <input
+                value={inptEmail}
+                onChange={(e) => setInptEmail(e.target.value)}
+                type="email"
+                placeholder="enter your email address..."
+              />
+              <button onClick={() => errorEmailFn()}>Join</button>
             </div>
+
+            <p style={{ color: "red" }}>
+              {errorEmail ? "Invalid email address" : undefined}
+            </p>
 
             <p>
               We usually post offers and challenges in newsletter. We’re your
