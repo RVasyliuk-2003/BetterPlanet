@@ -18,7 +18,7 @@ const CategoryPanel = ({
       <div className="leftPanel_Categories">
         <p>Categories</p>
         {noCategorRepeat.map((ell) => (
-          <ul key={ell.id}>
+          <ul key={ell}>
             <li>
               <a
                 style={{ color: clickCategory === ell ? "green" : undefined }}
@@ -28,14 +28,14 @@ const CategoryPanel = ({
                 {ell}
               </a>
             </li>
-            <li>({ell.length})</li>
+            <li>({product.filter((el) => el.category === ell).length})</li>
           </ul>
         ))}
 
         <div className="leftPanel_Size">
           <p>Size</p>
           {noSizeRepeat.map((ell) => (
-            <ul key={ell.id}>
+            <ul key={ell}>
               <li>
                 <a
                   style={{ color: clickSize === ell ? "green" : undefined }}
@@ -45,7 +45,7 @@ const CategoryPanel = ({
                   {ell}
                 </a>
               </li>
-              <li> ({ell.length})</li>
+              <li>({product.filter((el) => el.size === ell).length})</li>
             </ul>
           ))}
         </div>
