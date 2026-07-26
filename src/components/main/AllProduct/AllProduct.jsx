@@ -4,20 +4,13 @@ import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
 const AllProduct = ({ product }) => {
-
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
 
   const filteredProducts = product.filter((ell) => {
-    if (liCategor === "New Arrivals" && !ell.isNew) {
-      return false;
-    }
-    if (liCategor === "Sale" && !ell.oldPrice) {
-      return false;
-    }
-    if (selectShop !== "Default sorting" && ell.title !== selectShop) {
-      return false;
-    }
+    if (liCategor === "New Arrivals") return ell.isNew;
+    if (liCategor === "Sale") return ell.oldPrice;
+    if (selectShop !== "Default sorting") return ell.title === selectShop;
     return true;
   });
 
