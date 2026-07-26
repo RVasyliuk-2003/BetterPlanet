@@ -1,8 +1,11 @@
 import "./letsMake.css";
 import "../../../App.css";
 import mainPng from "./images/mainPng.png";
+import ShopNow from "../OurBlogPosts/ShopNow/ShopNow";
+import { useState } from "react";
 
 const LetsMake = () => {
+  const [modalShop, setModalShop] = useState(false);
   return (
     <>
       <section>
@@ -18,7 +21,10 @@ const LetsMake = () => {
               Order your favorite plants!
             </p>
 
-            <button>SHOP NOW</button>
+            <button onClick={() => setModalShop(true)}>SHOP NOW</button>
+            {modalShop ? (
+              <ShopNow modalShop={modalShop} setModalShop={setModalShop} />
+            ) : null}
           </div>
 
           <div className="rightMainBox">

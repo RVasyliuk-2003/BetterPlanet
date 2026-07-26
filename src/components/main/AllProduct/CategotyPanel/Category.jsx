@@ -21,7 +21,7 @@ const CategoryPanel = ({
           <ul key={ell.id}>
             <li>
               <a
-                style={{ color: clickCategory === ell? "green" : undefined }}
+                style={{ color: clickCategory === ell ? "green" : undefined }}
                 onClick={() => setClickCategory(ell)}
                 href="#"
               >
