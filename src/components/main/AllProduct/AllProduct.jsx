@@ -10,7 +10,7 @@ const AllProduct = ({ product }) => {
   const [clickCategory, setClickCategory] = useState("");
   const [clickSize, setClickSize] = useState("");
 
-  const filteredProducts = product.filter((ell) => {
+  const filteredProducts = product?.filter((ell) => {
     if (clickCategory && ell.category !== clickCategory) return false;
     if (clickSize && ell.size !== clickSize) return false;
     if (liCategor === "New Arrivals" && !ell.isNew) return false;
@@ -99,7 +99,6 @@ const AllProduct = ({ product }) => {
 
                         color: selectShop === ell.title ? "white" : undefined,
                       }}
-                      Sale
                       key={ell.id}
                     >
                       {ell.title}
