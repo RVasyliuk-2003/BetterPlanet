@@ -5,6 +5,8 @@ import Vector2 from "./images/Vector2.png";
 import Logout from "./images/Logout.png";
 import VectorLogo from "./images/VectorLogo.png";
 
+import { Link } from "react-router-dom";
+
 import Regist from "./RegistModal/Regist";
 import { useState } from "react";
 
@@ -23,16 +25,16 @@ const Header = () => {
 
             <ul className="ulNav">
               <li>
-                <a href="#">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="#">Shop</a>
+                <Link to="/AppAllProduct">Shop</Link>
               </li>
               <li>
-                <a href="#">Plant Care</a>
+                <Link to="/Advertsing">Plant Care</Link>
               </li>
               <li>
-                <a href="#">Blogs</a>
+                <Link to="/ourblog">Blogs</Link>
               </li>
             </ul>
 
