@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./shopNow.css";
 import LetsMake from "../../LetsMake1/LetsMake";
 
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+
 const ShopNow = ({ setModalShop, modalShop }) => {
-  const [inpt, setInpt] = useState(48);
+  const [inpt, setInpt] = useState("");
   const [errorNumber, setErrorNumber] = useState(true);
 
   const nun =
@@ -28,9 +31,10 @@ const ShopNow = ({ setModalShop, modalShop }) => {
 
       <div className="boxShopinpt">
         <p>Give us a call:</p>
-        <input
+        <PhoneInput
+          defaultCountry="ua"
           style={{ border: errorNumber ? undefined : "1px solid red" }}
-          onChange={(e) => setInpt(e.target.value)}
+          onChange={(inpt) => setInpt(inpt)}
           value={inpt}
           type="tel"
         />
