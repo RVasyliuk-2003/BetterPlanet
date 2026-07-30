@@ -3,10 +3,15 @@ import "./advertsing.css";
 import img1 from "./images/image14.png";
 import img2 from "./images/image15.png";
 
+import ShopNow from "../LetsMake1/ShopNow/ShopNow";
+import { useState } from "react";
+
 const Advertsing = () => {
+  const [modalShop, setModalShop] = useState(false);
+
   return (
     <section>
-      <div className="positionCenter">
+      <div className="positionCenter centerRelatuve">
         <div className="mainNews">
           <div className="containerNews">
             <img src={img1} alt="img" />
@@ -20,7 +25,7 @@ const Advertsing = () => {
                 cheap and trendy plants
               </p>
 
-              <button>find more</button>
+              <button onClick={() => setModalShop(true)}>find more</button>
             </div>
           </div>
 
@@ -35,10 +40,11 @@ const Advertsing = () => {
                 We are an online plant shop offering a wide <br /> range of
                 cheap and trendy plants
               </p>
-              <button>find more</button>
+              <button onClick={() => setModalShop(true)}>find more</button>
             </div>
           </div>
         </div>
+        <ShopNow modalShop={modalShop} setModalShop={setModalShop} />
       </div>
     </section>
   );
