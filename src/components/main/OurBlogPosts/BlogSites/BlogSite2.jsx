@@ -6,14 +6,15 @@ import img3 from "./images/images3.jfif";
 import img4 from "./images/images4.jfif";
 import img5 from "./images/images7.jfif";
 
-import f1 from "./../../OurBlogPosts/images/f1.png";
+import f2 from "./../../OurBlogPosts/images/f2.png";
 
-const BlogSite = () => {
+
+const BlogSite2 = () => {
   return (
     <section>
       <div className="positionCenter mainBlogBox">
         <div className="parametrBlogBox1">
-          <img src={f1} alt="img" />
+          <img src={f2} alt="img" />
           <h1>Plant Styling for Small Spaces: A Curated Guide</h1>
           <p>April 12, 2024 • by GreenShop Team</p>
         </div>
@@ -80,4 +81,4 @@ const BlogSite = () => {
   );
 };
 
-export default BlogSite;
+export default BlogSite2;

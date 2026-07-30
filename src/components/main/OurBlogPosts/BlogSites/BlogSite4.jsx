@@ -1,19 +1,18 @@
 import "./../../../../App.css";
 import "./blogSite.css";
-import mainImg from "./images/images.jfif";
+import img1 from "./images/images.jfif";
 import img2 from "./images/images2.jfif";
 import img3 from "./images/images3.jfif";
 import img4 from "./images/images4.jfif";
-import img5 from "./images/images7.jfif";
 
-import f1 from "./../../OurBlogPosts/images/f1.png";
+import f4 from "./../../OurBlogPosts/images/f4.png";
 
-const BlogSite = () => {
+const BlogSite4 = () => {
   return (
     <section>
       <div className="positionCenter mainBlogBox">
         <div className="parametrBlogBox1">
-          <img src={f1} alt="img" />
+          <img src={f4} alt="img" />
           <h1>Plant Styling for Small Spaces: A Curated Guide</h1>
           <p>April 12, 2024 • by GreenShop Team</p>
         </div>
@@ -28,7 +27,7 @@ const BlogSite = () => {
                 right plants are some snamos.
               </p>
             </div>
-            <img src={img2} alt="img" />
+            <img src={img1} alt="img" />
           </div>
           <div className="childParametrBlogBox">
             <div>
@@ -42,7 +41,7 @@ const BlogSite = () => {
                 iupee suppors and smcuethes of your sines.
               </p>
             </div>
-            <img src={img3} alt="img" />
+            <img src={img2} alt="img" />
           </div>
           <div className="childParametrBlogBox">
             <div>
@@ -57,7 +56,7 @@ const BlogSite = () => {
                 and search plants.
               </p>
             </div>
-            <img src={img4} alt="img" />
+            <img src={img3} alt="img" />
           </div>
           <div className="childParametrBlogBox">
             <div>
@@ -72,7 +71,7 @@ const BlogSite = () => {
                 aiming dans cowin light and and search plants.
               </p>
             </div>
-            <img src={img5} alt="img" />
+            <img src={img4} alt="img" />
           </div>
         </div>
       </div>
@@ -80,4 +79,4 @@ const BlogSite = () => {
   );
 };
 
-export default BlogSite;
+export default BlogSite4;

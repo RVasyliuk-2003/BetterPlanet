@@ -8,7 +8,6 @@ import f4 from "./images/f4.png";
 import svg from "./images/ArrowRight.png";
 
 import { Link } from "react-router-dom";
-
 const OurBlog = () => {
   return (
     <section>
@@ -31,9 +30,9 @@ const OurBlog = () => {
                   Cacti are succulents are easy care plants for any home or
                   patio.
                 </p>
-                <Link to="#">
+                <Link to="/BlogSite">
                   Read More <img src={svg} alt="#" />
-                </Link >
+                </Link>
               </div>
             </div>
 
@@ -48,7 +47,7 @@ const OurBlog = () => {
                   Cacti are succulents are easy care plants for any home or
                   patio.
                 </p>
-                <Link to="#">
+                <Link to="/BlogSite2">
                   Read More <img src={svg} alt="#" />
                 </Link>
               </div>
@@ -64,9 +63,9 @@ const OurBlog = () => {
                   Cacti are succulents are easy care plants for any home or
                   patio.
                 </p>
-                <Link to="#">
+                <Link to="/BlogSite3">
                   Read More <img src={svg} alt="#" />
-                </Link >
+                </Link>
               </div>
             </div>
             <div className="OurBlogCard">
@@ -80,9 +79,9 @@ const OurBlog = () => {
                   Cacti are succulents are easy care plants for any home or
                   patio.
                 </p>
-                <Link to="#">
+                <Link to="/BlogSite4">
                   Read More <img src={svg} alt="#" />
-                </Link >
+                </Link>
               </div>
             </div>
           </div>
