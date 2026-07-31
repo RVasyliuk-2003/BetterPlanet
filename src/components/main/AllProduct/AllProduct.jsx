@@ -3,7 +3,7 @@ import "../../../App.css";
 import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
-const AllProduct = ({ product, inptHead }) => {
+const AllProduct = ({ product, inptHead, setInptHead }) => {
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
 
@@ -45,6 +45,7 @@ const AllProduct = ({ product, inptHead }) => {
                       setLiCategor("All Plants");
                       setClickCategory("");
                       setClickSize("");
+                      setInptHead("");
                     }}
                     href="#"
                   >

@@ -11,7 +11,7 @@ import img015 from "./images/product-21-320x320 1.png";
 import AllProduct from "./AllProduct";
 import CategoryPanel from "./CategotyPanel/Category";
 
-const AppAllProduct = ({ inptHead }) => {
+const AppAllProduct = ({ inptHead, setInptHead }) => {
   const product = [
     {
       id: 1,
@@ -115,7 +115,11 @@ const AppAllProduct = ({ inptHead }) => {
   ];
   return (
     <>
-      <AllProduct inptHead={inptHead} product={product} />
+      <AllProduct
+        inptHead={inptHead}
+        setInptHead={setInptHead}
+        product={product}
+      />
     </>
   );
 };

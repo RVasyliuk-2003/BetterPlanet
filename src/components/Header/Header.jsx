@@ -49,7 +49,14 @@ const Header = ({ inptHead, setInptHead }) => {
                   onChange={(e) => setInptHead(e.target.value)}
                 />
                 {openInpt ? (
-                  <p onClick={() => setOpenInpt((prev) => !prev)}>X</p>
+                  <p
+                    onClick={() => {
+                      setOpenInpt((prev) => !prev);
+                      setInptHead("");
+                    }}
+                  >
+                    X
+                  </p>
                 ) : (
                   <img
                     onClick={() => setOpenInpt((prev) => !prev)}

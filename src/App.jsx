@@ -20,10 +20,15 @@ function App() {
     <>
       <Header inptHead={inptHead} setInptHead={setInptHead} />
       <Routes>
-        <Route path="/" element={<Main inptHead={inptHead} />} />
+        <Route
+          path="/"
+          element={<Main setInptHead={setInptHead} inptHead={inptHead} />}
+        />
         <Route
           path="/AppAllProduct"
-          element={<AppAllProduct inptHead={inptHead} />}
+          element={
+            <AppAllProduct inptHead={inptHead} />
+          }
         />
         <Route path="/ourblog" element={<OurBlog />} />
         <Route path="/Advertsing" element={<Advertsing />} />
