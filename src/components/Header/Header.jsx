@@ -10,8 +10,10 @@ import { Link } from "react-router-dom";
 import Regist from "./RegistModal/Regist";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ inptHead, setInptHead }) => {
   const [modalRegistOpen, setModalRegistOpen] = useState(false);
+
+  const [openInpt, setOpenInpt] = useState(false);
 
   return (
     <>
@@ -39,9 +41,24 @@ const Header = () => {
             </ul>
 
             <div className="logOutNav">
-              <a href="#">
-                <img className="pngAut1" src={Vector2} alt="img" />
-              </a>
+              <div className={openInpt ? "inputBoxHeaher" : null}>
+                <input
+                  value={inptHead}
+                  className={openInpt ? null : "inputHeaher"}
+                  type="text"
+                  onChange={(e) => setInptHead(e.target.value)}
+                />
+                {openInpt ? (
+                  <p onClick={() => setOpenInpt((prev) => !prev)}>X</p>
+                ) : (
+                  <img
+                    onClick={() => setOpenInpt((prev) => !prev)}
+                    className="pngAut1"
+                    src={Vector2}
+                    alt="img"
+                  />
+                )}
+              </div>
 
               <a href="#">
                 <img className="pngAut2" src={Vector} alt="img" />

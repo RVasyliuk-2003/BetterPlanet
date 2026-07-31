@@ -3,11 +3,11 @@ import AllProduct from "./AllProduct/AppAllProd";
 import Advertsing from "./Advertsing/Advertsing";
 import OurBlog from "./OurBlogPosts/OurBlog";
 
-const Main = () => {
+const Main = ({ inptHead }) => {
   return (
     <section>
       <LetsMake />
-      <AllProduct></AllProduct>
+      <AllProduct inptHead={inptHead} />
       <Advertsing />
       <OurBlog />
     </section>

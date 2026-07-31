@@ -3,7 +3,7 @@ import "../../../App.css";
 import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
-const AllProduct = ({ product }) => {
+const AllProduct = ({ product, inptHead }) => {
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
 
@@ -11,6 +11,7 @@ const AllProduct = ({ product }) => {
   const [clickSize, setClickSize] = useState("");
 
   const filteredProducts = product?.filter((ell) => {
+    if (!ell.title.toLowerCase().includes(inptHead.toLowerCase())) return false;
     if (clickCategory && ell.category !== clickCategory) return false;
     if (clickSize && ell.size !== clickSize) return false;
     if (liCategor === "New Arrivals" && !ell.isNew) return false;

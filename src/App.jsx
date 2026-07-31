@@ -11,14 +11,20 @@ import BlogSite from "./components/main/OurBlogPosts/BlogSites/BlogSite1";
 import BlogSite2 from "./components/main/OurBlogPosts/BlogSites/BlogSite2";
 import BlogSite3 from "./components/main/OurBlogPosts/BlogSites/BlogSite3";
 import BlogSite4 from "./components/main/OurBlogPosts/BlogSites/BlogSite4";
+import { useState } from "react";
 
 function App() {
+  const [inptHead, setInptHead] = useState("");
+
   return (
     <>
-      <Header />
+      <Header inptHead={inptHead} setInptHead={setInptHead} />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/AppAllProduct" element={<AppAllProduct />} />
+        <Route path="/" element={<Main inptHead={inptHead} />} />
+        <Route
+          path="/AppAllProduct"
+          element={<AppAllProduct inptHead={inptHead} />}
+        />
         <Route path="/ourblog" element={<OurBlog />} />
         <Route path="/Advertsing" element={<Advertsing />} />
 
