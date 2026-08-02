@@ -48,27 +48,27 @@
   justify-content: center;
 
   gap: 30px;
+}
 
-  > button {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
+.btnLogin {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
 
-    width: 100px;
-    height: 35px;
+  width: 100px;
+  height: 35px;
 
-    padding: 17px 8px;
-    border-radius: 6px;
-    border: 1px solid #4db562;
+  padding: 17px 8px;
+  border-radius: 6px;
+  border: 1px solid #4db562;
 
-    font-size: 16px;
-    color: white;
-    background-color: #46a358;
+  font-size: 16px;
+  color: white;
+  background-color: #46a358;
 
-    > a > img {
-      width: 20px;
-    }
+  > a > img {
+    width: 20px;
   }
 }
 
@@ -96,4 +96,35 @@
 
 .inputHeaher {
   display: none;
+}
+
+.numProdHeader {
+  position: relative;
+  /* width: 10px;
+  height: 10px; */
+  background: none;
+  border: none;
+
+  /* > img {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+  } */
+}
+
+.numProdHead {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  z-index: 4;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 0.5px solid rgb(150, 150, 150);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

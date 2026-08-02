@@ -17,11 +17,15 @@ function App() {
   const [inptHead, setInptHead] = useState("");
 
   const [basketBox, setBasketBox] = useState([]);
-  
 
   return (
     <>
-      <Header inptHead={inptHead} setInptHead={setInptHead} />
+      <Header
+        inptHead={inptHead}
+        setInptHead={setInptHead}
+        basketBox={basketBox}
+        setBasketBox={setBasketBox}
+      />
       <Routes>
         <Route
           path="/"

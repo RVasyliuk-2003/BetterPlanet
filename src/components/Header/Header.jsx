@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 import "../../../src/App.css";
 import Vector from "./images/Vector.png";
@@ -5,12 +7,9 @@ import Vector2 from "./images/Vector2.png";
 import Logout from "./images/Logout.png";
 import VectorLogo from "./images/VectorLogo.png";
 
-import { Link } from "react-router-dom";
-
 import Regist from "./RegistModal/Regist";
-import { useState } from "react";
 
-const Header = ({ inptHead, setInptHead }) => {
+const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
   const [modalRegistOpen, setModalRegistOpen] = useState(false);
 
   const [openInpt, setOpenInpt] = useState(false);
@@ -67,11 +66,17 @@ const Header = ({ inptHead, setInptHead }) => {
                 )}
               </div>
 
-              <a href="#">
+              <button className="numProdHeader">
                 <img className="pngAut2" src={Vector} alt="img" />
-              </a>
+                {basketBox.length > 0 && (
+                  <p className="numProdHead">{basketBox.length}</p>
+                )}
+              </button>
 
-              <button onClick={() => setModalRegistOpen(true)}>
+              <button
+                className="btnLogin"
+                onClick={() => setModalRegistOpen(true)}
+              >
                 <img src={Logout} alt="imgOut" />
                 Login
               </button>
