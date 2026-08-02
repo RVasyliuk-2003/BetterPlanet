@@ -26,9 +26,7 @@ function App() {
         />
         <Route
           path="/AppAllProduct"
-          element={
-            <AppAllProduct inptHead={inptHead} />
-          }
+          element={<AppAllProduct inptHead={inptHead} />}
         />
         <Route path="/ourblog" element={<OurBlog />} />
         <Route path="/Advertsing" element={<Advertsing />} />
