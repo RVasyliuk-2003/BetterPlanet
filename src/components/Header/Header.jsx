@@ -7,6 +7,8 @@ import Vector2 from "./images/Vector2.png";
 import Logout from "./images/Logout.png";
 import VectorLogo from "./images/VectorLogo.png";
 
+import BasketModal from "./BasketModal/BasketModal";
+
 import Regist from "./RegistModal/Regist";
 
 const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
@@ -91,6 +93,7 @@ const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
                 )}
               </div>
             </div>
+            {/* <BasketModal openInpt={openInpt} /> */}
           </nav>
         </div>
       </header>
