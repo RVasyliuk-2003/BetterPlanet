@@ -1,0 +1,78 @@
+.basketModalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  max-width: 1000px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: white;
+  padding: 55px 70px 25px 70px;
+  border: 1px solid #46a358;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.basketCart {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #46a358;
+  border-radius: 10px;
+
+  max-width: 300px;
+  width: 100%;
+
+  > img {
+    max-width: 80px;
+  }
+}
+
+.basketCartBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dsfdgdf {
+  width: 700px;
+}
+.closeModalBasketBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+
+  background: none;
+  border: none;
+}
+
+.deleteProduct {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  background: none;
+  border: none;
+}
+
+.countBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  border: 0.7px solid rgb(144, 144, 144);
+
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}

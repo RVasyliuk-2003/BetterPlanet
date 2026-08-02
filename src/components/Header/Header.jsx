@@ -11,10 +11,18 @@ import BasketModal from "./BasketModal/BasketModal";
 
 import Regist from "./RegistModal/Regist";
 
-const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
+const Header = ({
+  inptHead,
+  setInptHead,
+  basketBox,
+  setBasketBox,
+  deleteProductInBasket,
+}) => {
   const [modalRegistOpen, setModalRegistOpen] = useState(false);
-
   const [openInpt, setOpenInpt] = useState(false);
+  const [openModalWind, setOpenModalWind] = useState(false);
+
+  const countProd = basketBox.reduce((acc, ell) => acc + ell.count, 0);
 
   return (
     <>
@@ -68,10 +76,13 @@ const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
                 )}
               </div>
 
-              <button className="numProdHeader">
+              <button
+                onClick={() => setOpenModalWind(true)}
+                className="numProdHeader"
+              >
                 <img className="pngAut2" src={Vector} alt="img" />
                 {basketBox.length > 0 && (
-                  <p className="numProdHead">{basketBox.length}</p>
+                  <p className="numProdHead">{countProd}</p>
                 )}
               </button>
 
@@ -93,7 +104,14 @@ const Header = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
                 )}
               </div>
             </div>
-            {/* <BasketModal openInpt={openInpt} /> */}
+            {openModalWind ? (
+              <BasketModal
+                setOpenModalWind={setOpenModalWind}
+                basketBox={basketBox}
+                deleteProductInBasket={deleteProductInBasket}
+                countProd={countProd}
+              />
+            ) : null}
           </nav>
         </div>
       </header>

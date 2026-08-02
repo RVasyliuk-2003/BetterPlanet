@@ -29,14 +29,20 @@ const AllProduct = ({
     return true;
   });
 
-  const addProductFotBasket = (id) => {
+  const addProductForBasket = (id) => {
     const clickProduct = product.find((ell) => ell.id === id);
+    const alreadyInBasket = basketBox.some((ell) => ell.id === id);
+
     setBasketBox((basket) => {
-      return [...basket, clickProduct];
+      if (alreadyInBasket) {
+        return basket.map((ell) =>
+          ell.id === id ? { ...ell, count: ell.count + 1 } : ell,
+        );
+      } else {
+        return [...basket, { ...clickProduct, count: 1 }];
+      }
     });
   };
-
-  console.log(basketBox);
 
   return (
     <section>
@@ -128,27 +134,30 @@ const AllProduct = ({
             </nav>
 
             <div className="mainPanelProduct">
-              {filteredProducts.map((ell) => (
-                <div className="mainCardsBox" key={ell.id}>
-                  <button
-                    onClick={() => addProductFotBasket(ell.id)}
-                    className="cartIconBtn"
-                  >
-                    <CartIcon size={25} />
-                    {basketBox.filter((el) => el.id === ell.id).length > 0 && (
-                      <div className="numProd">
-                        <p>
-                          {basketBox.filter((el) => el.id === ell.id).length}
-                        </p>
-                      </div>
-                    )}
-                  </button>
+              {filteredProducts.map((ell) => {
+                const productInBasket = basketBox.find(
+                  (el) => el.id === ell.id,
+                );
 
-                  <img src={ell.img} alt={ell.title} />
-                  <h6>{ell.title}</h6>
-                  <p>${ell.price}</p>
-                </div>
-              ))}
+                return (
+                  <div className="mainCardsBox" key={ell.id}>
+                    <button
+                      onClick={() => addProductForBasket(ell.id)}
+                      className="cartIconBtn"
+                    >
+                      <CartIcon size={25} />
+                      {productInBasket?.count > 0 && (
+                        <div className="numProd">
+                          <p>{productInBasket.count}</p>
+                        </div>
+                      )}
+                    </button>
+                    <img src={ell.img} alt={ell.title} />
+                    <h6>{ell.title}</h6>
+                    <p>${ell.price}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

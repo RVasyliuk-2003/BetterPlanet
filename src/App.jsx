@@ -18,6 +18,22 @@ function App() {
 
   const [basketBox, setBasketBox] = useState([]);
 
+ const deleteProductInBasket = (id) => {
+   setBasketBox((basket) => {
+     const clickProduct = basket.find((ell) => ell.id === id);
+
+     if (clickProduct.count > 1) {
+       return basket.map((ell) =>
+         ell.id === id ? { ...ell, count: ell.count - 1 } : ell,
+       );
+     } else {
+       return basket.filter((ell) => ell.id !== id);
+     }
+   });
+ };
+
+
+
   return (
     <>
       <Header
@@ -25,6 +41,7 @@ function App() {
         setInptHead={setInptHead}
         basketBox={basketBox}
         setBasketBox={setBasketBox}
+        deleteProductInBasket={deleteProductInBasket}
       />
       <Routes>
         <Route
