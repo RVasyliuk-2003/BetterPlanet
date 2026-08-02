@@ -3,6 +3,8 @@ import "../../../App.css";
 import "./allProduct.css";
 import CategoryPanel from "./CategotyPanel/Category";
 
+import CartIcon from "../../CartIcon";
+
 const AllProduct = ({ product, inptHead, setInptHead }) => {
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
@@ -113,6 +115,10 @@ const AllProduct = ({ product, inptHead, setInptHead }) => {
             <div className="mainPanelProduct">
               {filteredProducts.map((ell) => (
                 <div className="mainCardsBox" key={ell.id}>
+                  <button className="cartIconBtn">
+                    <CartIcon size={25} />
+                  </button>
+
                   <img src={ell.img} alt={ell.title} />
                   <h6>{ell.title}</h6>
                   <p>${ell.price}</p>
