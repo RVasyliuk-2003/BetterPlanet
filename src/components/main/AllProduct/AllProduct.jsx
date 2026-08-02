@@ -5,7 +5,13 @@ import CategoryPanel from "./CategotyPanel/Category";
 
 import CartIcon from "../../CartIcon";
 
-const AllProduct = ({ product, inptHead, setInptHead }) => {
+const AllProduct = ({
+  product,
+  inptHead,
+  setInptHead,
+  basketBox,
+  setBasketBox,
+}) => {
   const [selectShop, setSelectShop] = useState("Default sorting");
   const [liCategor, setLiCategor] = useState("All Plants");
 
@@ -22,6 +28,15 @@ const AllProduct = ({ product, inptHead, setInptHead }) => {
       return false;
     return true;
   });
+
+  const addProductFotBasket = (id) => {
+    const clickProduct = product.find((ell) => ell.id === id);
+    setBasketBox((basket) => {
+      return [...basket, clickProduct];
+    });
+  };
+
+  console.log(basketBox);
 
   return (
     <section>
@@ -115,8 +130,18 @@ const AllProduct = ({ product, inptHead, setInptHead }) => {
             <div className="mainPanelProduct">
               {filteredProducts.map((ell) => (
                 <div className="mainCardsBox" key={ell.id}>
-                  <button className="cartIconBtn">
+                  <button
+                    onClick={() => addProductFotBasket(ell.id)}
+                    className="cartIconBtn"
+                  >
                     <CartIcon size={25} />
+                    {basketBox.filter((el) => el.id === ell.id).length > 0 && (
+                      <div className="numProd">
+                        <p>
+                          {basketBox.filter((el) => el.id === ell.id).length}
+                        </p>
+                      </div>
+                    )}
                   </button>
 
                   <img src={ell.img} alt={ell.title} />

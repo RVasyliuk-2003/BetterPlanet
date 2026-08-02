@@ -16,17 +16,33 @@ import { useState } from "react";
 function App() {
   const [inptHead, setInptHead] = useState("");
 
+  const [basketBox, setBasketBox] = useState([]);
+  
+
   return (
     <>
       <Header inptHead={inptHead} setInptHead={setInptHead} />
       <Routes>
         <Route
           path="/"
-          element={<Main setInptHead={setInptHead} inptHead={inptHead} />}
+          element={
+            <Main
+              setInptHead={setInptHead}
+              inptHead={inptHead}
+              basketBox={basketBox}
+              setBasketBox={setBasketBox}
+            />
+          }
         />
         <Route
           path="/AppAllProduct"
-          element={<AppAllProduct inptHead={inptHead} />}
+          element={
+            <AppAllProduct
+              inptHead={inptHead}
+              basketBox={basketBox}
+              setBasketBox={setBasketBox}
+            />
+          }
         />
         <Route path="/ourblog" element={<OurBlog />} />
         <Route path="/Advertsing" element={<Advertsing />} />

@@ -11,7 +11,7 @@ import img015 from "./images/product-21-320x320 1.png";
 import AllProduct from "./AllProduct";
 import CategoryPanel from "./CategotyPanel/Category";
 
-const AppAllProduct = ({ inptHead, setInptHead }) => {
+const AppAllProduct = ({ inptHead, setInptHead, basketBox, setBasketBox }) => {
   const product = [
     {
       id: 1,
@@ -116,8 +116,9 @@ const AppAllProduct = ({ inptHead, setInptHead }) => {
   return (
     <>
       <AllProduct
+        basketBox={basketBox}
+        setBasketBox={setBasketBox}
         inptHead={inptHead}
-        setInptHead={setInptHead}
         product={product}
       />
     </>
