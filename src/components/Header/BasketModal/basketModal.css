@@ -37,10 +37,35 @@
 .basketCartBox {
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
 }
 
-.dsfdgdf {
-  width: 700px;
+.infoBoxBasket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  max-width: 500px;
+  /* width: 100%; */
+
+  > p {
+    font-size: 20px;
+    color: rgb(103, 103, 103);
+  }
+
+  > h4 {
+    font-size: 26px;
+  }
+
+  > button {
+    margin-top: 10px;
+    padding: 10px 50px;
+    width: 140px;
+    background-color: #46a358;
+    border: 1px solid #4bb05f;
+    color: white;
+    border-radius: 5px;
+  }
 }
 .closeModalBasketBtn {
   position: absolute;
@@ -75,4 +100,17 @@
   position: absolute;
   bottom: -2px;
   right: -2px;
+}
+
+.basketEmpty {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  > p {
+    color: red;
+    font-weight: 600;
+    font-size: 30px;
+  }
 }

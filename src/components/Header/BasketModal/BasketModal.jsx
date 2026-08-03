@@ -6,9 +6,10 @@ const BasketModal = ({
   deleteProductInBasket,
   countProd,
 }) => {
-  const totalPrice = basketBox.reduce((acc, ell) => acc + ell.price, 0);
-
-  console.log(basketBox);
+  const totalPrice = basketBox.reduce(
+    (acc, ell) => acc + ell.price * ell.count,
+    0,
+  );
 
   return (
     <div className="basketModalContainer">
@@ -37,12 +38,19 @@ const BasketModal = ({
           </div>
         ))}
       </div>
-      <div className="dsfdgdf">
-        <p>Total cost:{countProd}</p>
-        <h4>Total price: {totalPrice}</h4>
 
-        <button>Buy</button>
-      </div>
+      {basketBox.length > 0 ? (
+        <div className="infoBoxBasket">
+          <p>Total cost: {countProd}</p>
+          <h4>Total price: {totalPrice}</h4>
+
+          <button>Buy</button>
+        </div>
+      ) : (
+        <div className="basketEmpty">
+          <p>The basket is empty</p>
+        </div>
+      )}
     </div>
   );
 };
