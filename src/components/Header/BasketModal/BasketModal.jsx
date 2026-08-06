@@ -31,7 +31,7 @@ const BasketModal = ({
               onClick={() => deleteProductInBasket(ell.id)}
               className="deleteProduct"
             >
-              X
+              {ell.count > 1 ? "-" : "X"}
             </button>
 
             <div className="countBox">{ell.count}</div>
